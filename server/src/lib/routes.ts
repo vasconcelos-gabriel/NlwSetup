@@ -3,7 +3,6 @@ import { FastifyInstance } from 'fastify'
 import { z } from 'zod'
 import { prisma } from './prisma'
 
-
 export async function appRoutes(app: FastifyInstance) {
   app.post('/habits', async request => {
     const createHabitBody = z.object({
@@ -62,9 +61,10 @@ export async function appRoutes(app: FastifyInstance) {
       }
     })
 
-    const completedHabits = day?.dayHabits.map(dayHabit => {
-      return dayHabit.habit_id
-    })
+    const completedHabits =
+      day?.dayHabits.map(dayHabit => {
+        return dayHabit.habit_id
+      }) ?? []
 
     return {
       possibleHabits,
