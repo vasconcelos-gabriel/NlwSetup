@@ -36,10 +36,10 @@ const Home = () => {
       >
         <View className="flex-row flex-wrap">
           {datesFromYearStart.map(date => (
-            <HabitDay
-              key={date.toISOString()}
-              onPress={() => navigate('habit', { date: date.toISOString() })}
-            />
+              <HabitDay 
+                key={date.toISOString()}
+                onPress={() => navigate('habit', { date: date.toISOString() })}
+              />
           ))}
 
           {amountOfDaysToFill > 0 &&

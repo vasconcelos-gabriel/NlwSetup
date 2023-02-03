@@ -11,7 +11,7 @@ interface Props extends TouchableOpacityProps {
 
 }
 
-const HabitDay = ({...rest}) => {
+const HabitDay = ({...rest}: Props) => {
   return (
     <TouchableOpacity
       activeOpacity={0.7}
